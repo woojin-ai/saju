@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Noto Serif KR', serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+  }
+}
+
+@layer components {
+  .oriental-card {
+    @apply bg-white/90 backdrop-blur-sm rounded-xl shadow-xl border border-primary-200/50;
+  }
+  
+  .oriental-gradient {
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  }
+  
+  .saju-grid {
+    @apply grid grid-cols-4 gap-4 p-6 bg-gradient-to-br from-amber-50 to-orange-50 rounded-lg border-2 border-amber-200;
+  }
+  
+  .pillar-card {
+    @apply bg-white rounded-lg p-4 text-center shadow-md border border-amber-300;
+  }
+  
+  .element-wood { @apply text-green-600; }
+  .element-fire { @apply text-red-600; }
+  .element-earth { @apply text-yellow-600; }
+  .element-metal { @apply text-gray-600; }
+  .element-water { @apply text-blue-600; }
+  
+  .btn-oriental {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 text-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200;
+  }
+  
+  .input-oriental {
+    @apply w-full px-4 py-3 border border-primary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white/80 backdrop-blur-sm;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .glass-effect {
+    @apply bg-white/20 backdrop-blur-lg border border-white/30;
+  }
+}
+
+/* 한자 폰트 스타일 */
+.hanja {
+  font-family: 'Noto Serif CJK KR', 'Noto Serif KR', serif;
+  font-weight: 600;
+}
+
+/* 애니메이션 */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* 스크롤바 스타일 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
