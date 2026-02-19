@@ -38,7 +38,7 @@ const TaekIlPage: React.FC = () => {
   
   // 현재 워커의 상태값들 추출
   const { progress: calculationProgress, items: goodDays, running: isCalculating, status: calculationStatus, start, abort } = currentWorker;
-  const hotspots = 'hotspots' in currentWorker ? currentWorker.hotspots : [];
+  const hotspots: Array<{timestamp: number, duration: number}> = 'hotspots' in currentWorker ? (currentWorker.hotspots as Array<{timestamp: number, duration: number}>) : [];
   
   // 워커 상태 모니터링
   useEffect(() => {
