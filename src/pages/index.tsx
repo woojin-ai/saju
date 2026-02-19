@@ -120,7 +120,7 @@ export default function Home() {
             <aside className="hidden xl:flex flex-col items-center w-40 flex-shrink-0 sticky top-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/20">
                 <p className="text-white/40 text-xs text-center mb-2">광고</p>
-                <KakaoAdfit />
+                <KakaoAdfit adUnit="DAN-b1xM3yfAHSGRrEka" adWidth="160" adHeight="600" />
               </div>
             </aside>
 
@@ -167,11 +167,16 @@ export default function Home() {
             <aside className="hidden xl:flex flex-col items-center w-40 flex-shrink-0 sticky top-4">
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/20">
                 <p className="text-white/40 text-xs text-center mb-2">광고</p>
-                <KakaoAdfit />
+                <KakaoAdfit adUnit="DAN-5TJIkFrxfV7DtMGq" adWidth="160" adHeight="600" />
               </div>
             </aside>
           </div>
         </main>
+
+        {/* 하단 가로 배너 광고 */}
+        <div className="flex justify-center py-4 bg-black/10">
+          <KakaoAdfit adUnit="DAN-sCwVFjSRyrHqBnSZ" adWidth="728" adHeight="90" />
+        </div>
 
         {/* 푸터 */}
         <footer className="bg-black/20 backdrop-blur-sm py-8">

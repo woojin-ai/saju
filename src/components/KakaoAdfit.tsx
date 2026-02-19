@@ -1,30 +1,25 @@
-import { useEffect, useRef } from 'react'
+import { useEffect } from 'react'
 
 interface KakaoAdfitProps {
+  adUnit: string
+  adWidth: string
+  adHeight: string
   className?: string
 }
 
-declare global {
-  interface Window {
-    kakaoAdfitLoaded?: boolean
-  }
-}
-
-export default function KakaoAdfit({ className = '' }: KakaoAdfitProps) {
-  const insRef = useRef<HTMLDivElement>(null)
-
+export default function KakaoAdfit({ adUnit, adWidth, adHeight, className = '' }: KakaoAdfitProps) {
   useEffect(() => {
-    // SDK는 _document.tsx에서 로드됨 - ins 태그만 렌더링하면 자동 적용
+    // SDK가 ins 태그를 자동으로 처리함
   }, [])
 
   return (
-    <div className={`flex justify-center items-start ${className}`}>
+    <div className={`flex justify-center items-center ${className}`}>
       <ins
         className="kakao_ad_area"
-        style={{ display: 'block' }}
-        data-ad-unit="DAN-b1xM3yfAHSGRrEka"
-        data-ad-width="160"
-        data-ad-height="600"
+        style={{ display: 'none' }}
+        data-ad-unit={adUnit}
+        data-ad-width={adWidth}
+        data-ad-height={adHeight}
       />
     </div>
   )
