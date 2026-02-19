@@ -12,7 +12,6 @@ export default function Document() {
         />
         <meta name="description" content="한국 전통 사주팔자 해석 웹사이트" />
         <link rel="icon" href="/favicon.ico" />
-        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
       </Head>
       <body>
         <Main />

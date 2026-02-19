@@ -21,7 +21,7 @@ export default function KakaoAdfit({ className = '' }: KakaoAdfitProps) {
     <div className={`flex justify-center items-start ${className}`}>
       <ins
         className="kakao_ad_area"
-        style={{ display: 'none' }}
+        style={{ display: 'block' }}
         data-ad-unit="DAN-b1xM3yfAHSGRrEka"
         data-ad-width="160"
         data-ad-height="600"
