@@ -36,6 +36,7 @@ const CompatibilityPage: React.FC = () => {
     if (person1Data && person2Data) {
       analyzeCompatibility();
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [person1Data, person2Data]);
 
   const handlePerson1Submit = async (birthInfo: BirthInfo) => {

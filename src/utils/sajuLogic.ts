@@ -584,7 +584,7 @@ function getSeasonElement(month: number): string {
 
 // 계절 보너스 계산
 function calculateSeasonBonus(ilganElement: string, seasonElement: string): any {
-    const bonusMessages = {
+    const bonusMessages: { [key: string]: { [key: string]: string } } = {
         love: {
             same: " 계절의 기운이 당신의 매력을 한층 더 돋보이게 합니다.",
             supportive: " 계절의 에너지가 연애운을 상승시켜줍니다.",
@@ -723,7 +723,7 @@ function generateYearSummary(saju: SajuData, currentYear: number, birthYear: num
 
 // 연간 키워드 생성
 function getYearKeywords(year: number, ilgan: string, age: number): string[] {
-    const baseKeywords = {
+    const baseKeywords: { [key: string]: string[] } = {
         '甲': ['성장', '도전', '리더십', '혁신'],
         '乙': ['유연성', '예술', '협력', '조화'],
         '丙': ['열정', '활력', '변화', '전진'],
@@ -752,7 +752,7 @@ function getYearKeywords(year: number, ilgan: string, age: number): string[] {
     
     // 연도별 특수 키워드
     const lastDigit = year % 10;
-    const cycleKeywords = {
+    const cycleKeywords: { [key: number]: string[] } = {
         0: ['시작', '기초'],
         1: ['발전', '성장'],
         2: ['안정', '고민'],
@@ -879,7 +879,7 @@ function getYearCautions(ilgan: string, age: number, year: number): string[] {
     const cautions: string[] = [];
     
     // 일간별 주의사항
-    const ilganCautions = {
+    const ilganCautions: { [key: string]: string } = {
         '甲': '너무 성급하게 추진하지 말고 단계적으로 접근하세요.',
         '乙': '우유부단함을 줄이고 때로는 확고한 결정을 내리세요.',
         '丙': '감정적 기복을 조절하고 지속가능한 에너지 관리를 하세요.',
@@ -915,7 +915,7 @@ function getYearRecommendations(ilgan: string, yearElement: string, age: number)
     const recommendations: string[] = [];
     
     // 일간별 추천사항
-    const ilganRecommendations = {
+    const ilganRecommendations: { [key: string]: string } = {
         '甲': '새로운 도전과 학습 기회를 적극적으로 찾아보세요.',
         '乙': '예술이나 창작 활동을 통해 감성을 기르세요.',
         '丙': '사교 활동이나 네트워킹을 통해 인맥을 넓히세요.',
@@ -931,7 +931,7 @@ function getYearRecommendations(ilgan: string, yearElement: string, age: number)
     recommendations.push(`• ${ilganRecommendations[ilgan] || '자기계발에 힘써보세요.'}`);
     
     // 연간 오행별 추천사항
-    const yearElementRecommendations = {
+    const yearElementRecommendations: { [key: string]: string } = {
         '木': '새로운 시작이나 성장 관련 활동에 집중하세요.',
         '火': '활발한 활동과 인간관계 확장에 노력하세요.',
         '土': '안정적인 기반 마련과 신뢰 구축에 힘쓰세요.',
