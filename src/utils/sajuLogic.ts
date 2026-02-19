@@ -624,7 +624,7 @@ function calculateSeasonBonus(ilganElement: string, seasonElement: string): any 
         relationship = 'same';
     } else {
         // 상생 관계 체크
-        const mutualGeneration = {
+        const mutualGeneration: { [key: string]: string } = {
             '木': '火',
             '火': '土',
             '土': '金',
@@ -637,7 +637,7 @@ function calculateSeasonBonus(ilganElement: string, seasonElement: string): any 
         }
         
         // 상극 관계 체크
-        const mutualDestruction = {
+        const mutualDestruction: { [key: string]: string } = {
             '木': '土',
             '火': '金',
             '土': '水',
@@ -780,7 +780,7 @@ function analyzeYearHarmony(ilganElement: string, yearElement: string): { score:
         description = '일간과 연간의 오행이 일치하여 자신의 본성을 최대한 발휘할 수 있는 해입니다. 원래 가진 장점이 한층 더 빛을 발하고, 자신감이 높아지는 시기입니다.';
     } else {
         // 상생 관계 체크
-        const mutualGeneration = {
+        const mutualGeneration: { [key: string]: string } = {
             '木': '火', '火': '土', '土': '金', '金': '水', '水': '木'
         };
         
@@ -792,7 +792,7 @@ function analyzeYearHarmony(ilganElement: string, yearElement: string): { score:
             description = '연간이 일간을 도와주는 관계로, 외부의 도움이나 기회가 많이 찾아오는 해입니다. 주변의 지원을 잘 활용하면 큰 발전을 이룰 수 있습니다.';
         } else {
             // 상극 관계 체크
-            const mutualDestruction = {
+            const mutualDestruction: { [key: string]: string } = {
                 '木': '土', '火': '金', '土': '水', '金': '木', '水': '火'
             };
             
