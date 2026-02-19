@@ -5,6 +5,7 @@ import SajuForm from '@/components/SajuForm'
 import SajuResult from '@/components/SajuResult'
 import TodayFortune from '@/components/TodayFortune'
 import Navigation from '@/components/Navigation'
+import KakaoAdfit from '@/components/KakaoAdfit'
 import { calculateSaju, analyzeSaju } from '@/utils/sajuLogic'
 import type { BirthInfo, SajuData, SajuAnalysis } from '@/utils/sajuLogic'
 
@@ -113,6 +114,17 @@ export default function Home() {
 
         {/* 메인 콘텐츠 */}
         <main className="container mx-auto px-4 pb-16">
+          {/* 3단 레이아웃: 좌측 광고 | 콘텐츠 | 우측 광고 */}
+          <div className="flex gap-4 items-start justify-center">
+            {/* 좌측 사이드바 광고 */}
+            <aside className="hidden xl:flex flex-col items-center w-40 flex-shrink-0 sticky top-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+                <p className="text-white/40 text-xs text-center mb-2">광고</p>
+                <KakaoAdfit />
+              </div>
+            </aside>
+
+          <div className="flex-1 min-w-0">
           <motion.div
             key={activeTab}
             initial={{ opacity: 0, x: 20 }}
@@ -149,6 +161,16 @@ export default function Home() {
               </div>
             )}
           </motion.div>
+          </div>
+
+            {/* 우측 사이드바 광고 */}
+            <aside className="hidden xl:flex flex-col items-center w-40 flex-shrink-0 sticky top-4">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+                <p className="text-white/40 text-xs text-center mb-2">광고</p>
+                <KakaoAdfit />
+              </div>
+            </aside>
+          </div>
         </main>
 
         {/* 푸터 */}
